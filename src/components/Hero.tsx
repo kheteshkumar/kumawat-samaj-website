@@ -6,7 +6,7 @@
 
 import React from 'react'
 import { Users, Heart, Star, ChevronDown } from 'lucide-react'
-import { StatCard } from './ui/Card'
+// import { StatCard } from './ui/Card'
 
 // Community statistics shown in the stats bar
 const COMMUNITY_STATS = [
