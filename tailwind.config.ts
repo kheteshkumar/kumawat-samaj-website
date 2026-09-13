@@ -8,78 +8,102 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        saffron: {
-          50: '#fff8f0',
-          100: '#ffefd9',
-          200: '#ffdcb2',
-          300: '#ffc07a',
-          400: '#ff9d40',
-          500: '#ff7d0a',   // primary saffron
-          600: '#e86200',
-          700: '#c04900',
-          800: '#9a3a00',
-          900: '#7c3100',
+        // ── Primary teal accent scale ──
+        teal: {
+          50:  '#e6faf9',
+          100: '#b3f0ec',
+          200: '#80e6df',
+          300: '#4ddcd2',
+          400: '#26d0c5',
+          500: '#0ecbbc',   // primary accent
+          600: '#0bb5a7',
+          700: '#089e92',
+          800: '#05877c',
+          900: '#036158',
         },
-        gold: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',   // bright gold
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+        // ── Dark surface scale ──
+        surface: {
+          900: '#0b1a1a',   // page background
+          800: '#0f2020',
+          700: '#122525',   // card background
+          600: '#163030',   // elevated card
+          500: '#1a3535',   // hover card
+          400: '#204040',   // borders
+          300: '#2a5050',   // subtle borders
         },
+        // ── Legacy kumawat tokens (remapped to dark teal) ──
         kumawat: {
-          cream: '#fdf6ec',
-          ochre: '#d4820a',
-          maroon: '#7c1f1f',
-          lotus: '#e8608a',
-          deep: '#2d1a00',
+          cream: '#0b1a1a',
+          ochre: '#0ecbbc',
+          maroon: '#0bb5a7',
+          lotus:  '#4ddcd2',
+          deep:   '#ffffff',
+        },
+        // ── Legacy saffron scale (remapped to teal) ──
+        saffron: {
+          50:  '#e6faf9',
+          100: '#b3f0ec',
+          200: 'rgba(14,203,188,0.2)',
+          300: '#4ddcd2',
+          400: '#26d0c5',
+          500: '#0ecbbc',
+          600: '#0bb5a7',
+          700: '#089e92',
+          800: '#05877c',
+          900: '#036158',
+        },
+        // ── Legacy gold scale (remapped to teal-light) ──
+        gold: {
+          50:  '#e6faf9',
+          100: '#b3f0ec',
+          200: '#80e6df',
+          300: '#4ddcd2',
+          400: '#26d0c5',
+          500: '#0ecbbc',
+          600: '#0bb5a7',
+          700: '#089e92',
+          800: '#05877c',
+          900: '#036158',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans:       ['Inter', 'system-ui', 'sans-serif'],
+        serif:      ['Playfair Display', 'Georgia', 'serif'],
         devanagari: ['Noto Serif Devanagari', 'serif'],
       },
-      backgroundImage: {
-        // 'saffron-gradient': 'linear-gradient(135deg, #ff7d0a 0%, #fbbf24 50%, #ff9d40 100%)',
-        // 'hero-gradient': 'linear-gradient(160deg, #c04900 0%, #ff7d0a 35%, #fbbf24 70%, #fcd34d 100%)',
-        // 'card-gradient': 'linear-gradient(145deg, #fff8f0 0%, #ffefd9 100%)',
-        // 'footer-gradient': 'linear-gradient(180deg, #2d1a00 0%, #1a0f00 100%)',
-      },
       animation: {
-        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'fade-in': 'fadeIn 0.5s ease-out forwards',
-        'pulse-gold': 'pulseGold 2s ease-in-out infinite',
-        'float': 'float 3s ease-in-out infinite',
+        'fade-in-up':  'fadeInUp 0.6s ease-out forwards',
+        'fade-in':     'fadeIn 0.5s ease-out forwards',
+        'pulse-teal':  'pulseTeal 2s ease-in-out infinite',
+        'float':       'float 3s ease-in-out infinite',
       },
       keyframes: {
         fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%':   { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
-          '0%': { opacity: '0' },
+          '0%':   { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        pulseGold: {
-          '0%, 100%': { boxShadow: '0 0 0 0 rgba(251,191,36,0.4)' },
-          '50%': { boxShadow: '0 0 0 12px rgba(251,191,36,0)' },
+        pulseTeal: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(14,203,188,0.4)' },
+          '50%':       { boxShadow: '0 0 0 12px rgba(14,203,188,0)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-8px)' },
+          '50%':       { transform: 'translateY(-8px)' },
         },
       },
       boxShadow: {
-        'saffron': '0 4px 20px rgba(255,125,10,0.25)',
-        'gold': '0 4px 20px rgba(251,191,36,0.30)',
-        'warm': '0 8px 32px rgba(180,83,9,0.15)',
-        'card': '0 2px 16px rgba(45,26,0,0.08)',
+        'teal':      '0 4px 24px rgba(14,203,188,0.25)',
+        'card':      '0 2px 16px rgba(0,0,0,0.40)',
+        'card-hover':'0 8px 32px rgba(0,0,0,0.55)',
+        'glow':      '0 0 40px rgba(14,203,188,0.15)',
+        // legacy aliases
+        'saffron':   '0 4px 24px rgba(14,203,188,0.25)',
+        'gold':      '0 4px 24px rgba(14,203,188,0.25)',
+        'warm':      '0 8px 32px rgba(0,0,0,0.55)',
       },
     },
   },

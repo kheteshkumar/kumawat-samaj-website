@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toaster } from 'react-hot-toast'
 import { Navbar }             from './components/Navbar'
 import { Hero }               from './components/Hero'
+import { Goals }              from './components/Goals'
 import { RegistrationForm }   from './components/RegistrationForm'
 import { Contact }            from './components/Contact'
 import { Footer }             from './components/Footer'
@@ -69,7 +70,10 @@ function App() {
           {/* 1. Hero */}
           <Hero />
 
-          {/* 2. Member Registration Form */}
+          {/* 2. Community Goals */}
+          <Goals />
+
+          {/* 3. Member Registration Form */}
           <RegistrationForm />
 
           {/* 3. Contact & Address */}

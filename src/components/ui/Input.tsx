@@ -1,7 +1,7 @@
 /**
  * @file Input.tsx
- * @description Reusable form input component with label, error message,
- * and optional icon. Supports text, email, tel, and textarea variants.
+ * @description Reusable form input component — dark teal theme.
+ * Matches the dark input style in the AuroCX-inspired screenshot.
  */
 
 import React from 'react'
@@ -18,7 +18,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 /**
- * `Input` — styled form input with label, inline error, and icon slot.
+ * `Input` — dark-themed form input with label, inline error, and icon slot.
  *
  * @example
  * ```tsx
@@ -33,26 +33,30 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label htmlFor={inputId} className="form-label">
             {label}
-            {props.required && <span className="text-saffron-500 ml-0.5">*</span>}
+            {props.required && <span style={{ color: '#0ecbbc' }} className="ml-0.5">*</span>}
           </label>
         )}
         <div className="relative">
           {leftIcon && (
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-saffron-400">
+            <span
+              className="absolute left-3 top-1/2 -translate-y-1/2"
+              style={{ color: 'rgba(14,203,188,0.60)' }}
+            >
               {leftIcon}
             </span>
           )}
           <input
             id={inputId}
             ref={ref}
-            className={`form-input ${leftIcon ? 'pl-10' : ''} ${error ? 'error' : ''} ${className}`}
+            className={`form-input ${error ? 'error' : ''} ${className}`}
+            style={leftIcon ? { paddingLeft: '2.75rem' } : undefined}
             aria-invalid={!!error}
             aria-describedby={error ? `${inputId}-error` : undefined}
             {...props}
           />
         </div>
         {hint && !error && (
-          <p className="text-xs text-kumawat-deep/50">{hint}</p>
+          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{hint}</p>
         )}
         {error && (
           <p id={`${inputId}-error`} className="form-error" role="alert">
@@ -77,7 +81,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
 }
 
 /**
- * `Select` — styled select dropdown with label and error.
+ * `Select` — dark-themed select dropdown with label and error.
  */
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   ({ label, error, options, placeholder, wrapperClassName = '', className = '', id, ...props }, ref) => {
@@ -87,7 +91,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label htmlFor={selectId} className="form-label">
             {label}
-            {props.required && <span className="text-saffron-500 ml-0.5">*</span>}
+            {props.required && <span style={{ color: '#0ecbbc' }} className="ml-0.5">*</span>}
           </label>
         )}
         <select
@@ -132,7 +136,7 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
 }
 
 /**
- * `Textarea` — styled textarea with optional character counter.
+ * `Textarea` — dark-themed textarea with optional character counter.
  */
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ label, error, hint, wrapperClassName = '', className = '', id, maxLength, currentLength, ...props }, ref) => {
@@ -154,7 +158,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         />
         <div className="flex justify-between items-center">
           {hint && !error && (
-            <p className="text-xs text-kumawat-deep/50">{hint}</p>
+            <p className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{hint}</p>
           )}
           {error && (
             <p className="form-error" role="alert">
@@ -163,7 +167,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             </p>
           )}
           {maxLength && (
-            <p className="text-xs text-kumawat-deep/40 ml-auto">
+            <p className="text-xs ml-auto" style={{ color: 'rgba(255,255,255,0.30)' }}>
               {currentLength ?? 0}/{maxLength}
             </p>
           )}

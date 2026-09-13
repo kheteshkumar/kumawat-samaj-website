@@ -45,13 +45,13 @@ export const Step1Personal: React.FC = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5" id="step1-form">
       {/* Section header */}
-      <div className="flex items-center gap-3 mb-6 pb-4 border-b border-saffron-100">
-        <div className="w-10 h-10 rounded-xl bg-saffron-100 flex items-center justify-center text-saffron-600">
+      <div className="flex items-center gap-3 mb-6 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(14,203,188,0.12)', color: '#0ecbbc' }}>
           <Sparkles size={20} />
         </div>
         <div>
-          <h3 className="font-semibold text-kumawat-deep">Personal Information</h3>
-          <p className="text-xs text-kumawat-deep/50">Tell us about yourself</p>
+          <h3 className="font-semibold" style={{ color: '#ffffff' }}>Personal Information</h3>
+          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.40)' }}>Tell us about yourself</p>
         </div>
       </div>
 

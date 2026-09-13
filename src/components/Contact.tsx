@@ -1,7 +1,6 @@
 /**
  * @file Contact.tsx
- * @description Contact and office information section with styled cards
- * for address, phone, and email, plus a "How to Reach Us" map placeholder.
+ * @description Contact and office information section — dark teal theme.
  */
 
 import React from 'react'
@@ -17,7 +16,7 @@ const CONTACT_INFO = [
       'M.I. Road, Near Ajmeri Gate,',
       'Jaipur, Rajasthan — 302 001',
     ],
-    accentColor: 'bg-saffron-100 text-saffron-600',
+    accentColor: 'teal',
   },
   {
     icon: <Phone size={24} />,
@@ -28,7 +27,7 @@ const CONTACT_INFO = [
       'Mon – Sat: 10:00 AM – 6:00 PM',
     ],
     href: 'tel:+919414012345',
-    accentColor: 'bg-gold-100 text-gold-600',
+    accentColor: 'teal',
   },
   {
     icon: <Mail size={24} />,
@@ -39,7 +38,7 @@ const CONTACT_INFO = [
       'We reply within 24 hours',
     ],
     href: 'mailto:info@kumawatsamaj.org',
-    accentColor: 'bg-kumawat-lotus/20 text-kumawat-lotus',
+    accentColor: 'teal',
   },
   {
     icon: <Globe size={24} />,
@@ -50,24 +49,25 @@ const CONTACT_INFO = [
       '@KumawatSamaj',
     ],
     href: 'https://kumawatsamaj.org',
-    accentColor: 'bg-blue-50 text-blue-500',
+    accentColor: 'teal',
   },
 ]
 
 const OFFICE_HOURS = [
   { day: 'Monday – Friday', time: '10:00 AM – 6:00 PM' },
-  { day: 'Saturday', time: '10:00 AM – 4:00 PM' },
-  { day: 'Sunday', time: 'Closed' },
+  { day: 'Saturday',        time: '10:00 AM – 4:00 PM' },
+  { day: 'Sunday',          time: 'Closed' },
 ]
 
 /**
- * `Contact` — community contact section with cards and office hours.
+ * `Contact` — community contact section with dark cards and office hours.
  */
 export const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-20 px-4 sm:px-6 lg:px-8"
+      style={{ background: '#0b1a1a' }}
       aria-labelledby="contact-heading"
     >
       <div className="max-w-6xl mx-auto">
@@ -75,12 +75,12 @@ export const Contact: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-14">
           <div className="om-divider">
-            <span className="text-2xl text-saffron-400 font-devanagari">ॐ</span>
+            <img src="./logo.png" alt="Kumawat Samaj" className="w-8 h-8 rounded-full object-cover" />
           </div>
           <h2 id="contact-heading" className="section-title mb-3">
             Get in Touch
           </h2>
-          <p className="text-kumawat-deep/60 text-base max-w-lg mx-auto">
+          <p className="text-base max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.50)' }}>
             Reach out to the Kumawat Samaj community office for membership queries,
             events, or any assistance you may need.
           </p>
@@ -99,18 +99,26 @@ export const Contact: React.FC = () => {
           {/* Office Hours */}
           <div className="floating-card p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-saffron-100 flex items-center justify-center text-saffron-600">
+              <div
+                className="w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ background: 'rgba(14,203,188,0.12)', color: '#0ecbbc' }}
+              >
                 <Clock size={20} />
               </div>
-              <h3 className="font-semibold text-kumawat-deep text-lg">Office Hours</h3>
+              <h3 className="font-semibold text-lg" style={{ color: '#ffffff' }}>Office Hours</h3>
             </div>
 
             <ul className="space-y-4">
               {OFFICE_HOURS.map(({ day, time }) => (
-                <li key={day} className="flex justify-between items-center py-2 border-b border-saffron-50 last:border-0">
-                  <span className="text-kumawat-deep/70 font-medium text-sm">{day}</span>
+                <li
+                  key={day}
+                  className="flex justify-between items-center py-2"
+                  style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                  <span className="font-medium text-sm" style={{ color: 'rgba(255,255,255,0.60)' }}>{day}</span>
                   <span
-                    className={`text-sm font-semibold ${time === 'Closed' ? 'text-red-400' : 'text-saffron-600'}`}
+                    className="text-sm font-semibold"
+                    style={{ color: time === 'Closed' ? '#f87171' : '#0ecbbc' }}
                   >
                     {time}
                   </span>
@@ -118,8 +126,11 @@ export const Contact: React.FC = () => {
               ))}
             </ul>
 
-            <div className="mt-6 p-4 bg-saffron-50 rounded-xl border border-saffron-100">
-              <p className="text-xs text-saffron-700">
+            <div
+              className="mt-6 p-4 rounded-xl"
+              style={{ background: 'rgba(14,203,188,0.07)', border: '1px solid rgba(14,203,188,0.15)' }}
+            >
+              <p className="text-xs" style={{ color: 'rgba(14,203,188,0.85)' }}>
                 <strong>Note:</strong> Office may be closed on national holidays
                 and special Samaj events. Call ahead to confirm.
               </p>
@@ -128,14 +139,22 @@ export const Contact: React.FC = () => {
 
           {/* Map / Location Visual */}
           <div className="floating-card overflow-hidden">
-            <div className="h-full min-h-[280px] bg-gradient-to-br from-saffron-50 to-gold-50 flex flex-col items-center justify-center gap-4 p-8 text-center relative">
+            <div
+              className="h-full min-h-[280px] flex flex-col items-center justify-center gap-4 p-8 text-center relative"
+              style={{
+                background: 'linear-gradient(135deg, rgba(14,203,188,0.07) 0%, rgba(14,203,188,0.03) 100%)',
+              }}
+            >
               {/* Decorative map pin */}
-              <div className="w-16 h-16 rounded-full bg-saffron-100 flex items-center justify-center animate-float">
-                <MapPin size={32} className="text-saffron-500" />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center animate-float"
+                style={{ background: 'rgba(14,203,188,0.12)', color: '#0ecbbc' }}
+              >
+                <MapPin size={32} />
               </div>
               <div>
-                <h4 className="font-semibold text-kumawat-deep mb-1">Find Our Office</h4>
-                <p className="text-kumawat-deep/60 text-sm">
+                <h4 className="font-semibold mb-1" style={{ color: '#ffffff' }}>Find Our Office</h4>
+                <p className="text-sm" style={{ color: 'rgba(255,255,255,0.50)' }}>
                   Kumawat Samaj Bhawan,<br />
                   M.I. Road, Jaipur, Rajasthan
                 </p>
@@ -148,18 +167,9 @@ export const Contact: React.FC = () => {
               >
                 Open in Google Maps
               </a>
-
-              {/* Decorative pattern */}
-              <div
-                className="absolute inset-0 opacity-5 pointer-events-none"
-                style={{
-                  // backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='25' fill='none' stroke='%23ff7d0a' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='15' fill='none' stroke='%23ff7d0a' stroke-width='1'/%3E%3C/svg%3E")`,
-                  backgroundSize: '80px 80px',
-                }}
-                aria-hidden="true"
-              />
             </div>
           </div>
+
         </div>
       </div>
     </section>

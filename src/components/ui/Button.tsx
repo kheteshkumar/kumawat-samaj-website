@@ -1,6 +1,6 @@
 /**
  * @file Button.tsx
- * @description Reusable button component with saffron/gold variants.
+ * @description Reusable button component — dark teal theme.
  */
 
 import React from 'react'
@@ -18,14 +18,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<Variant, string> = {
-  primary:
-    'btn-primary',
-  secondary:
-    'btn-secondary',
-  gold:
-    'btn-gold',
+  primary:   'btn-primary',
+  secondary: 'btn-secondary',
+  gold:      'btn-gold',
   ghost:
-    'inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-saffron-600 hover:bg-saffron-50 active:scale-95 transition-all duration-200 disabled:opacity-60',
+    'inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-200 disabled:opacity-50',
 }
 
 const sizeClasses: Record<Size, string> = {
@@ -52,11 +49,18 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   disabled,
   className = '',
+  style,
   ...props
 }) => {
+  const ghostStyle: React.CSSProperties =
+    variant === 'ghost'
+      ? { color: 'rgba(14,203,188,0.85)', ...style }
+      : (style ?? {})
+
   return (
     <button
       className={`${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      style={ghostStyle}
       disabled={disabled || loading}
       {...props}
     >
