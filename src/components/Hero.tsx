@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
       />
 
       {/* ── Main content ──────────────────────────── */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-28 pb-4 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-10 text-center">
 
         {/* Main Heading */}
         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 animate-fade-in-up" style={{ color: '#ffffff' }}>
@@ -132,8 +132,8 @@ export const Hero: React.FC = () => {
           borderTop: '1px solid rgba(14,203,188,0.10)',
         }}
       >
-        <div className="max-w-4xl mx-auto px-4 py-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10">
             {COMMUNITY_STATS.map((stat) => (
               <div key={stat.label} className="text-center flex flex-col items-center justify-center gap-2">
                 <div

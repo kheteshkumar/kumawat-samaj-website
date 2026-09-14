@@ -66,14 +66,14 @@ export const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 px-4 sm:px-6 lg:px-8"
+      className="py-10 px-4 sm:px-6 lg:px-8"
       style={{ background: '#0b1a1a' }}
       aria-labelledby="contact-heading"
     >
       <div className="max-w-6xl mx-auto">
 
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-4">
           <div className="om-divider">
             <img src="./logo.png" alt="Kumawat Samaj" className="w-8 h-8 rounded-full object-cover" />
           </div>
@@ -87,14 +87,14 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Contact Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12 items-stretch">
           {CONTACT_INFO.map((info) => (
             <ContactCard key={info.title} {...info} />
           ))}
         </div>
 
         {/* Office Hours + Map Placeholder */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
           {/* Office Hours */}
           <div className="floating-card p-8">

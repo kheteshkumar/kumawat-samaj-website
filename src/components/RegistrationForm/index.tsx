@@ -30,7 +30,7 @@ export const RegistrationForm: React.FC = () => {
   return (
     <section
       id="register"
-      className="py-20 px-4 sm:px-6 lg:px-8"
+      className="pt-14 pb-20 px-4 sm:px-6 lg:px-8"
       style={{ background: 'linear-gradient(180deg, #0b1a1a 0%, #0f2020 50%, #0b1a1a 100%)' }}
       aria-labelledby="register-heading"
     >

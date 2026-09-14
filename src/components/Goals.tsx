@@ -104,14 +104,14 @@ const GoalCard: React.FC<GoalCardProps> = ({
       <div className="absolute top-4 left-4 flex items-start gap-1">
         <span
           className="font-black leading-none"
-          style={{ fontSize: '3rem', color: 'rgba(255,255,255,0.92)', lineHeight: 1 }}
+          style={{ fontSize: '2.75rem', color: 'rgba(255,255,255,0.92)', lineHeight: 1 }}
         >
           {id}
         </span>
       </div>
 
       {/* ── Title (top-right of number) ── */}
-      <div className="pt-4 pr-4 pl-20 pb-2">
+      <div className="pt-4 pr-4 pl-16 pb-2">
         <h3
           className="font-black uppercase leading-tight"
           style={{
@@ -125,7 +125,7 @@ const GoalCard: React.FC<GoalCardProps> = ({
       </div>
 
       {/* ── Icon (centred) ── */}
-      <div className="flex items-center justify-center py-5">
+      <div className="flex items-center justify-center py-4">
         <div
           className="rounded-2xl flex items-center justify-center"
           style={{
@@ -167,11 +167,11 @@ export const Goals: React.FC = () => {
   return (
     <section
       id="goals"
-      className="py-20 px-4 sm:px-6 lg:px-8"
+      className="pt-6 pb-2 px-4 sm:px-6 lg:px-8"
       style={{ background: 'linear-gradient(180deg, #0f2020 0%, #0b1a1a 100%)' }}
       aria-labelledby="goals-heading"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* ── Section header ── */}
         <div className="text-center mb-14">
@@ -212,14 +212,14 @@ export const Goals: React.FC = () => {
         </div>
 
         {/* ── Goals grid ── */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
           {GOALS.map((goal, index) => (
             <GoalCard key={goal.id} {...goal} delay={index * 60} />
           ))}
         </div>
 
         {/* ── Bottom CTA ── */}
-        <div className="text-center mt-14">
+        <div className="text-center mt-10">
           <p
             className="text-sm mb-5"
             style={{ color: 'rgba(255,255,255,0.45)' }}

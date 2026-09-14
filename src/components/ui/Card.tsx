@@ -72,7 +72,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
   const inner = (
     <div
-      className="h-full p-8 flex flex-col items-center text-center gap-5 rounded-2xl transition-all duration-300 cursor-default"
+      className="h-full p-6 flex flex-col items-center text-center gap-4 rounded-2xl transition-all duration-300 cursor-default"
       style={{
         background: '#122525',
         border: '1px solid rgba(255,255,255,0.07)',
