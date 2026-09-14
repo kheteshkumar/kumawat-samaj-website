@@ -55,8 +55,8 @@ const CONTACT_INFO = [
 
 const OFFICE_HOURS = [
   { day: 'Monday – Friday', time: '10:00 AM – 6:00 PM' },
-  { day: 'Saturday',        time: '10:00 AM – 4:00 PM' },
-  { day: 'Sunday',          time: 'Closed' },
+  { day: 'Saturday', time: '10:00 AM – 4:00 PM' },
+  { day: 'Sunday', time: 'Closed' },
 ]
 
 /**
@@ -87,7 +87,7 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Contact Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14 items-stretch">
           {CONTACT_INFO.map((info) => (
             <ContactCard key={info.title} {...info} />
           ))}

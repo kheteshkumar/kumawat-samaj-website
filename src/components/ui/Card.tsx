@@ -72,25 +72,25 @@ export const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
   const inner = (
     <div
-      className="p-10 flex flex-col items-center text-center gap-5 rounded-2xl transition-all duration-300 cursor-default"
+      className="h-full p-8 flex flex-col items-center text-center gap-5 rounded-2xl transition-all duration-300 cursor-default"
       style={{
         background: '#122525',
         border: '1px solid rgba(255,255,255,0.07)',
         boxShadow: '0 2px 16px rgba(0,0,0,0.40)',
       }}
       onMouseEnter={e => {
-        ; (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(14,203,188,0.20)'
-          ; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)'
-          ; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 32px rgba(0,0,0,0.55)'
+        ;(e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(14,203,188,0.20)'
+          ;(e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)'
+          ;(e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 32px rgba(0,0,0,0.55)'
       }}
       onMouseLeave={e => {
-        ; (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)'
-          ; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'
-          ; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 2px 16px rgba(0,0,0,0.40)'
+        ;(e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)'
+          ;(e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'
+          ;(e.currentTarget as HTMLDivElement).style.boxShadow = '0 2px 16px rgba(0,0,0,0.40)'
       }}
     >
       <div
-        className="w-20 h-20 rounded-2xl flex items-center justify-center"
+        className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
         style={{ background: 'rgba(14,203,188,0.12)', color: '#0ecbbc' }}
       >
         {icon}
@@ -108,7 +108,7 @@ export const ContactCard: React.FC<ContactCardProps> = ({
 
   if (href) {
     return (
-      <a href={href} className="block" target="_blank" rel="noopener noreferrer">
+      <a href={href} className="block h-full" target="_blank" rel="noopener noreferrer">
         {inner}
       </a>
     )

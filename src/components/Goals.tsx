@@ -7,16 +7,11 @@
 
 import React, { useState } from 'react'
 import {
-  Users,
-  BookOpen,
-  Landmark,
-  TrendingUp,
+  Trophy,
   Heart,
-  Smartphone,
-  Leaf,
-  ShieldCheck,
-  Star,
-  Globe,
+  GraduationCap,
+  Ambulance,
+  HandHelpingIcon,
 } from 'lucide-react'
 
 // ── Goal data ─────────────────────────────────────
@@ -33,82 +28,42 @@ interface Goal {
 const GOALS: Goal[] = [
   {
     id: 1,
-    title: 'Community Unity',
-    description: 'Bring every Kumawat family under one umbrella, fostering bonds across states and generations.',
-    icon: <Users size={40} strokeWidth={1.5} />,
+    title: 'Sports',
+    description: 'Organise sports tournaments, leagues, and athletic events to encourage fitness and team spirit across the Kumawat community.',
+    icon: <Trophy size={40} strokeWidth={1.5} />,
     color: '#c0392b',
     lightColor: 'rgba(255,255,255,0.18)',
   },
   {
     id: 2,
-    title: 'Education for All',
-    description: 'Fund scholarships and coaching for students from economically weaker sections of our community.',
-    icon: <BookOpen size={40} strokeWidth={1.5} />,
-    color: '#d4a017',
+    title: 'Matrimony',
+    description: 'Facilitate meaningful alliances within the Kumawat community through organised matrimonial meets and a trusted directory.',
+    icon: <Heart size={40} strokeWidth={1.5} />,
+    color: '#c8950a',
     lightColor: 'rgba(255,255,255,0.18)',
   },
   {
     id: 3,
-    title: 'Cultural Preservation',
-    description: 'Document, celebrate and transmit our 500+ year heritage through festivals, archives, and arts.',
-    icon: <Landmark size={40} strokeWidth={1.5} />,
+    title: 'Education & Scholarship',
+    description: 'Award scholarships and coaching support to meritorious and economically weaker students of the Kumawat Samaj.',
+    icon: <GraduationCap size={40} strokeWidth={1.5} />,
     color: '#27ae60',
     lightColor: 'rgba(255,255,255,0.18)',
   },
   {
     id: 4,
-    title: 'Economic Growth',
-    description: 'Connect artisans & entrepreneurs with markets, mentors, and micro-finance opportunities.',
-    icon: <TrendingUp size={40} strokeWidth={1.5} />,
-    color: '#8e1a1a',
+    title: 'Medical Emergency',
+    description: 'Provide immediate financial aid and free health camps to community members facing medical crises and emergencies.',
+    icon: <Ambulance size={40} strokeWidth={1.5} />,
+    color: '#a93226',
     lightColor: 'rgba(255,255,255,0.18)',
   },
   {
     id: 5,
-    title: 'Women Empowerment',
-    description: 'Support women through skill development, self-help groups, and leadership programmes.',
-    icon: <ShieldCheck size={40} strokeWidth={1.5} />,
-    color: '#e67e22',
-    lightColor: 'rgba(255,255,255,0.18)',
-  },
-  {
-    id: 6,
-    title: 'Health & Welfare',
-    description: 'Organise free health camps, insurance drives, and welfare funds for elderly and needy members.',
-    icon: <Heart size={40} strokeWidth={1.5} />,
-    color: '#0e8fb5',
-    lightColor: 'rgba(255,255,255,0.18)',
-  },
-  {
-    id: 7,
-    title: 'Youth Development',
-    description: 'Sports leagues, leadership retreats, and career guidance to shape the next generation.',
-    icon: <Star size={40} strokeWidth={1.5} />,
-    color: '#7d3c98',
-    lightColor: 'rgba(255,255,255,0.18)',
-  },
-  {
-    id: 8,
-    title: 'Digital Connectivity',
-    description: 'Build a digital member directory, event portal, and mobile app to keep the community connected.',
-    icon: <Smartphone size={40} strokeWidth={1.5} />,
-    color: '#1a7a6e',
-    lightColor: 'rgba(255,255,255,0.18)',
-  },
-  {
-    id: 9,
-    title: 'Environmental Care',
-    description: 'Plant trees, promote clean villages, and lead eco-friendly festival celebrations.',
-    icon: <Leaf size={40} strokeWidth={1.5} />,
-    color: '#1e8449',
-    lightColor: 'rgba(255,255,255,0.18)',
-  },
-  {
-    id: 10,
-    title: 'Global Outreach',
-    description: 'Connect the Kumawat diaspora across the globe and celebrate our culture on the world stage.',
-    icon: <Globe size={40} strokeWidth={1.5} />,
-    color: '#1a5276',
+    title: 'Gau Seva',
+    description: 'Protect and care for cows through Gaushalas, feeding drives, and awareness programs rooted in our cultural values.',
+    icon: <HandHelpingIcon size={40} strokeWidth={1.5} />,
+    color: '#b7610a',
     lightColor: 'rgba(255,255,255,0.18)',
   },
 ]
@@ -226,11 +181,10 @@ export const Goals: React.FC = () => {
 
           {/* SDG-style rainbow strip */}
           <div className="flex justify-center gap-1 mb-6" aria-hidden="true">
-            {['#c0392b','#d4a017','#27ae60','#8e1a1a','#e67e22',
-              '#0e8fb5','#7d3c98','#1a7a6e','#1e8449','#1a5276'].map((c) => (
+            {['#c0392b', '#c8950a', '#27ae60', '#a93226', '#b7610a'].map((c) => (
               <div
                 key={c}
-                className="h-2 rounded-full flex-1 max-w-[36px]"
+                className="h-2 rounded-full flex-1 max-w-[48px]"
                 style={{ background: c }}
               />
             ))}
@@ -246,8 +200,8 @@ export const Goals: React.FC = () => {
             className="text-base max-w-xl mx-auto"
             style={{ color: 'rgba(255,255,255,0.50)' }}
           >
-            Ten pillars that guide the Kumawat Samaj towards a stronger,
-            more united, and prosperous future.
+            Sports, Matrimony, Education {' & '} Scholarship, Medical Emergency {' & '} Gau Mata Seva —
+            five pillars serving the Kumawat Samaj community.
           </p>
           <p
             className="text-xs mt-2 font-devanagari"
@@ -258,7 +212,7 @@ export const Goals: React.FC = () => {
         </div>
 
         {/* ── Goals grid ── */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {GOALS.map((goal, index) => (
             <GoalCard key={goal.id} {...goal} delay={index * 60} />
           ))}
